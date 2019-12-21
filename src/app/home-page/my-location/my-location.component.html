@@ -1,5 +1,0 @@
-<div class="box text-center" *ngIf="myLocation?.currentCondition">
-    <app-current-condition-card [location]="myLocation" [fullyName]="false"></app-current-condition-card>
-</div>
-
-<app-alert [message]="error" *ngIf="error" (close)="onClose()"></app-alert>
