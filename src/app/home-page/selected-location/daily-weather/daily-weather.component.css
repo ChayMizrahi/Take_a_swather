@@ -1,0 +1,20 @@
+.box{
+  background: #e6e8ea;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.mobileLink{
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .mobileLink {
+      display: block;
+    }
+
+    .link{
+        display: none;
+    }
+  }

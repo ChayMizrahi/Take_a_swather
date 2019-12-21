@@ -1,0 +1,15 @@
+.box{
+    background: #F8F9FA;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-favorite{
+    color: black;
+    background-color: #F8F9FA;
+    border-color: #F8F9FA;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 2px;
+    margin-left: 2px;
+}

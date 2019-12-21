@@ -1,0 +1,13 @@
+.invalid-input{
+    color: red;
+}
+
+.searchRes{
+ border: 1px solid #ced4da;
+ border-radius: 0;
+ height: auto;
+}
+
+.searchRes:hover{
+    background: rgb(248, 249, 250);
+}

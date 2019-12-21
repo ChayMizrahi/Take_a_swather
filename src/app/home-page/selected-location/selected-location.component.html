@@ -1,0 +1,24 @@
+<div *ngIf="selectedLocation" style="margin-bottom:100px;">
+
+  <button class="btn btn-favorite" *ngIf="!isFavorites()" (click)="onAddToFavor()" (mouseleave)="onMouseLaeve()" (mouseenter)="onMouseOn()"> <img src="./assets/images/Unlike.png"> </button>
+  <button class="btn btn-favorite" *ngIf="isFavorites()" (click)="onRemoveFromFavor()" (mouseleave)="onMouseLaeve()" (mouseenter)="onMouseOn()" > <img src="./assets/images/Like.png">  </button>
+  <span [@slideInOut] class="btn btn-favorite font-weight-bold" *ngIf="info"> 
+    <span *ngIf="!isFavorites()" >Add to favorites list</span>
+    <span *ngIf="isFavorites()" >Remove from favorites list</span>
+  </span>
+
+  <div class="row box text-center">
+    <div class="text-center col-12" *ngIf="selectedLocation?.currentCondition">
+      <app-current-condition-card [location]="selectedLocation" [fullyName]="true"></app-current-condition-card>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3" *ngFor="let day of selectedLocation.FiveDayForecasts | slice:1">
+        <app-daily-weather [dayWeather]="day"></app-daily-weather>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-alert [message]="message" *ngIf="message" (close)="onClose()"></app-alert>

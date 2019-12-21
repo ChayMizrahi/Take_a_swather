@@ -1,0 +1,29 @@
+<div class="pt-3">
+
+    <h1 class="text-center">Faverites Locations</h1>
+
+    <div *ngIf="faveritesList.length === 0" class="text-center p-3">
+        <h3>Oops.. You haven't selected any favorite locations yet ...</h3>
+        <img style="margin:20px;" src="./assets/images/Pins.png">
+        <p>Go to home page and add favorites </p>
+        <button class="btn btn-primary" (click)="onMoveHome()"> Home Page </button>
+    </div>
+
+    <div class="row p-3" *ngIf="faveritesList">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 m-auto" *ngFor="let location of faveritesList">
+            <div class="text-center">
+                <button class="btn btn-favorite" (click)="onUnfaveritrs(location.key, location.name)"> <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="btn  btn-favorite" (click)="onSelect(location)"> <i class="fas fa-info"></i> </button>
+            </div>
+    
+            <div class="box">
+                <app-current-condition-card [location]="location" [fullyName]="false"></app-current-condition-card>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<app-alert [message]="message" *ngIf="message" (close)="onClose()"></app-alert>
