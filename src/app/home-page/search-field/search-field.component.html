@@ -1,13 +1,13 @@
 <div class="row">
-    <div class="col-12 col-md-10 m-auto text-center">
+    <div class="col-12 col-md-6 m-auto text-center">
         <form >
-            <label>Enter the city name you want to looking for and click 'Enter' or 'Search'</label>
+            <label>Eenter the city name you are looking for and click 'Enter' or 'Search'</label>
             <input type="text" class="form-control text-center"  (input)="onChangeInput()" autocomplete="off" #qInput="ngModel" name="q" required
                 pattern="^[a-zA-Z,-.!? ]*$" type="text" [(ngModel)]="q">
             <div class="invalid-input" *ngIf="qInput.errors?.pattern"> Can only be written in English </div>
             <div *ngIf="searchRes?.length === 0" class="invalid-input"> No matching results. </div>
             <div *ngIf="searchRes?.length > 0">
-                <button class="btn form-control searchRes text-center"  *ngFor="let r of searchRes; let i = index"
+                <button class="btn form-control searchRes text-left"  *ngFor="let r of searchRes; let i = index"
                     (click)="onSelectLoction(i)"><span
                         class="font-weight-bold">{{r.name}}</span>, {{r.administrativeArea}}, {{r.country}}</button>
             </div>
